@@ -15,13 +15,8 @@ import java.util.UUID;
 @Service
 public class AddressService {
 
-
-    AddressRepository repository;
-
     @Autowired
-    public AddressService(AddressRepository repository) {
-        this.repository = repository;
-    }
+    AddressRepository repository;
 
     public AddressEntity saveAddress(AddressEntity entity) {
         String randomUserId = UUID.randomUUID().toString();
