@@ -15,8 +15,13 @@ import java.util.UUID;
 @Service
 public class AddressService {
 
-    @Autowired
+
     AddressRepository repository;
+
+    @Autowired
+    public AddressService(AddressRepository repository) {
+        this.repository = repository;
+    }
 
     public AddressEntity saveAddress(AddressEntity entity) {
         String randomUserId = UUID.randomUUID().toString();
@@ -48,13 +53,18 @@ public class AddressService {
 
 // user
 
+
+
     @Autowired
     UserRepo userRepo;
+
+
     public UserProfile createUserProfile(UserProfile userProfile) {
         String randomUserId = UUID.randomUUID().toString();
         userProfile.setId(randomUserId);
         userProfile.setAddresses(Collections.singletonList(getAllAddress().get(0)));
 
+        userProfile.setFirstName(userProfile.getFirstName());
         return userRepo.save(userProfile);
     }
 
