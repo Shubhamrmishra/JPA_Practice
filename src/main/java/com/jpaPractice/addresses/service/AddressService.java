@@ -53,7 +53,6 @@ public class AddressService {
     @Autowired
     UserRepo userRepo;
 
-    AddressEntity addressEntity= new AddressEntity();
 
 
     public UserProfile createUserProfile(UserProfile userProfile) {
