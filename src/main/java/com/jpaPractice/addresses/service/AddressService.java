@@ -53,12 +53,13 @@ public class AddressService {
     @Autowired
     UserRepo userRepo;
 
+    AddressEntitywemdhjwebde2udb
+
 
     public UserProfile createUserProfile(UserProfile userProfile) {
         String randomUserId = UUID.randomUUID().toString();
         userProfile.setId(randomUserId);
         userProfile.setAddresses(Collections.singletonList(getAllAddress().get(0)));
-
         userProfile.setFirstName(userProfile.getFirstName());
         return userRepo.save(userProfile);
     }
